@@ -149,7 +149,7 @@ html, body {
     line-height: 1.6;
 }
 
-.cta-button {
+.cta-button-learn {
     display: inline-block;
     margin-top: 40px;
     padding: 18px 45px;
@@ -165,7 +165,32 @@ html, body {
     overflow: hidden;
 }
 
-.cta-button::before {
+.cta-button-course {
+    display: inline-block;
+    margin-top: 40px;
+    margin-left: 20px;
+    padding: 18px 45px;
+    /* background: linear-gradient(135deg, #00E0FF, #00FFA3); */
+    color: #f2f2f7;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid #00E0FF;
+    /* box-shadow: 0 10px 30px rgba(0, 224, 255, 0.3); */
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-button-course:hover {
+    background: linear-gradient(135deg, #00E0FF, #00FFA3);
+    color: #0a0a0f;
+    box-shadow: 0 10px 30px rgba(0, 224, 255, 0.3);
+    transform: translateY(-3px);
+}
+
+.cta-button-learn::before {
     content: "";
     position: absolute;
     top: 0;
@@ -176,11 +201,11 @@ html, body {
     transition: left 0.5s ease;
 }
 
-.cta-button:hover::before {
+.cta-button-learn:hover::before {
     left: 100%;
 }
 
-.cta-button:hover {
+.cta-button-learn:hover {
     transform: translateY(-3px);
     box-shadow: 0 15px 40px rgba(0, 224, 255, 0.5);
 }
@@ -622,7 +647,7 @@ html, body {
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 20px;
+        gap: 10px;
     }
 
     .stats-container {     
@@ -644,7 +669,130 @@ html, body {
     flex-wrap: wrap;
     border: 2px solid #ffffff;
     border-radius: 12px;
-    background:  linear-gradient(135deg, #0a0a0f 0%, #1a0a1f 50%, #0a0a0f 100%);;
+    background: linear-gradient(135deg, #0a0a0f 0%, #1a0a1f 50%, #0a0a0f 100%);
+    position: relative; /* Important */
+}
+
+.stats-container::before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 50px;
+    height: 50px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.8;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.stat-text {
+    font-size: 1.1rem;
+    color: #94a3b8;
+    text-align: center;
+    font-weight: 500;
+}
+
+/* Tablet - Large */
+@media (max-width: 1024px) {
+    .stats-container {
+        max-width: 900px;
+        margin: 0 auto 60px;
+        padding: 30px 20px;
+        gap: 30px;
+    }
+
+    .stat-number {
+        font-size: 2.2rem;
+    }
+
+    .stat-text {
+        font-size: 1rem;
+    }
+}
+
+/* Tablet - Medium */
+@media (max-width: 768px) {
+    .stats-container {
+        max-width: 700px;
+        margin: 0 auto 50px;
+        padding: 25px 20px;
+        gap: 25px;
+        border-width: 1.5px;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+        margin-bottom: 8px;
+    }
+
+    .stat-text {
+        font-size: 0.95rem;
+    }
+}
+
+/* Mobile - Large */
+@media (max-width: 640px) {
+    .stats-container {
+        max-width: 90%;
+        margin: 0 auto 40px;
+        padding: 20px 15px;
+        gap: 20px;
+        flex-direction: column;
+    }
+
+    .stat-number {
+        font-size: 1.8rem;
+        margin-bottom: 6px;
+    }
+
+    .stat-text {
+        font-size: 0.9rem;
+    }
+}
+
+/* Mobile - Small */
+@media (max-width: 480px) {
+    .stats-container {
+        max-width: 95%;
+        margin: 0 auto 30px;
+        padding: 20px 12px;
+        gap: 15px;
+        border-radius: 10px;
+    }
+
+    .stat-number {
+        font-size: 1.6rem;
+        margin-bottom: 5px;
+    }
+
+    .stat-text {
+        font-size: 0.85rem;
+    }
+}
+
+/* Mobile - Extra Small */
+@media (max-width: 380px) {
+    .stats-container {
+        padding: 18px 10px;
+        gap: 12px;
+    }
+
+    .stat-number {
+        font-size: 1.4rem;
+    }
+
+    .stat-text {
+        font-size: 0.8rem;
+    }
 }
 
 .stat-number{
@@ -662,4 +810,155 @@ html, body {
     font-weight: 500;
 }
 
+
 /* Stats-section done */
+
+/* Why us section starts */
+.why-us {
+    max-width: 1200px;
+    margin: 0 auto 80px;
+    padding: 40px 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.why-us-heading {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: 700;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.inner-heading {
+    color: #00E0FF;
+}
+
+.why-us-subheading {
+    font-size: 1.2rem;
+    color: #94a3b8;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.why-us-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.why-us-image {
+    flex: 1;
+    min-width: 300px;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.why-us-image img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    display: block;
+    border-radius: 16px;
+}
+
+.why-us-features {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    min-width: 300px;
+}
+
+.feature {
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.feature:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(0, 224, 255, 0.3);
+}
+
+.feature-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.feature-description {
+    font-size: 1rem;
+    color: #94a3b8;
+    line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .why-us {
+        padding: 30px 20px;
+    }
+
+    .why-us-content {
+        gap: 40px;
+    }
+
+    .why-us-image img {
+        height: 500px;
+    }
+}
+
+@media (max-width: 768px) {
+    .why-us-image {
+        display: none;
+    }
+
+    .why-us-content {
+        gap: 30px;
+    }
+
+    .why-us-features {
+        width: 100%;
+    }
+
+    .feature {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 640px) {
+    .why-us {
+        padding: 30px 15px;
+    }
+
+    .why-us-subheading {
+        font-size: 1rem;
+        margin-bottom: 40px;
+    }
+
+    .feature {
+        padding: 18px;
+    }
+
+    .feature-title {
+        font-size: 1.3rem;
+    }
+
+    .feature-description {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .feature-title {
+        font-size: 1.2rem;
+    }
+
+    .feature-description {
+        font-size: 0.9rem;
+    }
+}
