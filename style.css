@@ -5,10 +5,12 @@
 }
 
 html, body {
-    background-color: #000;
+    font-family: Poppins, sans-serif;
     height: 100%;
     width: 100%;
     overflow-x: hidden;
+    /* background-color: #0e0e10; */
+    /* background: linear-gradient(#0e0e10 50%, #056575 50%); */
 }
 
 .matrix-container {
@@ -263,7 +265,7 @@ html, body {
 @media (max-width: 1024px) {
     .img-container {
         width: 350px;
-        height: 4000px;
+        height: 400px;
         padding: 30px;
     }
 }
@@ -622,5 +624,42 @@ html, body {
         align-items: center;
         gap: 20px;
     }
+
+    .stats-container {     
+        flex-direction: row;
+        gap: 10px;
+    }
+}
+/* Hero-section done */
+
+/* Stats section */
+.stats-container {
+    max-width: 1200px;
+    margin: 0 auto 80px;
+    padding: 25px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    border: 2px solid #ffffff;
+    border-radius: 12px;
+    background:  linear-gradient(135deg, #0a0a0f 0%, #1a0a1f 50%, #0a0a0f 100%);;
 }
 
+.stat-number{
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.stat-text {
+    font-size: 1.1rem;
+    color: #94a3b8;
+    text-align: center;
+    font-weight: 500;
+}
+
+/* Stats-section done */
