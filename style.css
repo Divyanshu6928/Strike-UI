@@ -2020,6 +2020,7 @@ html, body {
 }
 
 /* FAQs Section */
+/* FAQs Section */
 .faqs-section {
     max-width: 1000px;
     margin: 0 auto 80px;
@@ -2051,7 +2052,32 @@ html, body {
     box-shadow: 0 8px 25px rgba(0, 224, 255, 0.15);
 }
 
-.faq-item.active {
+/* Hide checkbox */
+.faq-toggle {
+    display: none;
+}
+
+/* When checkbox is checked */
+.faq-toggle:checked ~ .faq-question {
+    color: #00E0FF;
+}
+
+.faq-toggle:checked ~ .faq-question .faq-icon {
+    transform: rotate(180deg);
+}
+
+.faq-toggle:checked ~ .faq-answer {
+    max-height: 500px;
+    padding: 0 30px 25px 30px;
+}
+
+.faq-toggle:checked + .faq-question + .faq-answer {
+    max-height: 500px;
+    padding: 0 30px 25px 30px;
+}
+
+/* Better selector for answer */
+.faq-item:has(.faq-toggle:checked) {
     border-color: rgba(0, 224, 255, 0.5);
     background: linear-gradient(135deg, 
         rgba(10, 10, 15, 0.8) 0%, 
@@ -2095,20 +2121,11 @@ html, body {
     transition: transform 0.3s ease;
 }
 
-.faq-item.active .faq-icon {
-    transform: rotate(180deg);
-}
-
 /* FAQ Answer */
 .faq-answer {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.4s ease, padding 0.4s ease;
-}
-
-.faq-item.active .faq-answer {
-    max-height: 500px;
-    padding: 0 30px 25px 30px;
 }
 
 .faq-answer p {
@@ -2139,6 +2156,7 @@ html, body {
 }
 
 .contact-btn {
+    display: inline-block;
     padding: 16px 50px;
     background: linear-gradient(135deg, #00E0FF, #00FFA3);
     color: #0a0a0f;
@@ -2147,6 +2165,7 @@ html, body {
     font-size: 1.1rem;
     font-weight: 700;
     font-family: 'Poppins', sans-serif;
+    text-decoration: none;
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 8px 20px rgba(0, 224, 255, 0.3);
@@ -2168,7 +2187,8 @@ html, body {
         padding: 22px 25px;
     }
 
-    .faq-item.active .faq-answer {
+    .faq-toggle:checked ~ .faq-answer,
+    .faq-toggle:checked + .faq-question + .faq-answer {
         padding: 0 25px 22px 25px;
     }
 }
@@ -2187,7 +2207,8 @@ html, body {
         padding: 20px;
     }
 
-    .faq-item.active .faq-answer {
+    .faq-toggle:checked ~ .faq-answer,
+    .faq-toggle:checked + .faq-question + .faq-answer {
         padding: 0 20px 20px 20px;
     }
 
@@ -2229,7 +2250,8 @@ html, body {
         height: 20px;
     }
 
-    .faq-item.active .faq-answer {
+    .faq-toggle:checked ~ .faq-answer,
+    .faq-toggle:checked + .faq-question + .faq-answer {
         padding: 0 15px 18px 15px;
     }
 
